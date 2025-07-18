@@ -1,16 +1,42 @@
-## Hi there 👋
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Secret Image Viewer</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+    }
+    img {
+      border-radius: 10px;
+      box-shadow: 0 0 10px #999;
+      max-width: 90%;
+      height: auto;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Welcome!</h2>
+  <img src="photo1.jpg" id="mainPhoto"><br><br>
 
-<!--
-**Neelesh-R/NEELESH-R** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+  <input type="password" id="pwd" placeholder="Enter Password to Unlock">
+  <button onclick="checkPwd()">Unlock</button>
 
-Here are some ideas to get you started:
+  <script>
+  function checkPwd() {
+    let pwd = document.getElementById("pwd").value;
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+    if (pwd === "1234") {
+      document.getElementById("mainPhoto").src = "photo2.jpg";
+    } else {
+      document.getElementById("mainPhoto").src = "wrong.jpg"; // show alternate image
+    }
+  }
+</script>
+
